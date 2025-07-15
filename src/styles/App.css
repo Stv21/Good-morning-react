@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e6f7ff 0%, #b3e0ff 100%);
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto 1fr auto;
+  gap: 24px;
+  padding: 32px;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+.dashboard-header {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-bottom: 16px;
+  position: relative;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.2);
+  margin-bottom: 16px;
+}
+
+.dashboard-header h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #4da6ff;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-header:hover h1 {
+  transform: scale(1.01);
+}
+
+.time-image-container {
+  grid-column: 1 / 8;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  height: 400px; /* Reduced height */
+  transition: all 0.4s ease;
+}
+
+.time-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.time-image-container:hover {
+  box-shadow: 0 20px 40px rgba(77, 166, 255, 0.15);
+}
+
+.time-image-container:hover .time-image {
+  transform: scale(1.03);
+}
+
+/* Greeting card - placed to the right of the image */
+.greeting-card {
+  grid-column: 8 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border-left: 5px solid #4da6ff;
+}
+
+.greeting-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(77, 166, 255, 0.12);
+}
+
+/* Time display - full width at the bottom */
+.time-display-container {
+  grid-column: 1 / -1;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  padding: 40px;
+  background: linear-gradient(to right, rgba(77, 166, 255, 0.03), rgba(77, 166, 255, 0.08));
+  border-top: 5px solid #4da6ff;
+  text-align: center;
+}
+
+.greeting-text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #333;
+  animation: fadeIn 1s ease-out;
+}
+
+.greeting-card p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+}
+
+.time-display {
+  font-size: 5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #4da6ff;
+  letter-spacing: 2px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: pulseScale 2s infinite alternate ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseScale {
+  from { transform: scale(1); }
+  to { transform: scale(1.02); }
+}
+
+@media (max-width: 1200px) {
+  .app-container {
+    padding: 24px;
+    gap: 20px;
+  }
+  
+  .time-image-container {
+    height: 350px;
+  }
+  
+  .greeting-text {
+    font-size: 3rem;
+  }
+  
+  .time-display {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  
+  .time-image-container {
+    grid-column: 1 / -1;
+    height: 300px;
+  }
+  
+  .greeting-card {
+    grid-column: 1 / -1;
+    height: auto;
+    padding: 24px;
+  }
+  
+  .time-display-container {
+    padding: 32px;
+  }
+  
+  .greeting-text {
+    font-size: 2.5rem;
+  }
+  
+  .time-display {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+  
+  .time-image-container {
+    height: 200px;
+  }
+  
+  .greeting-text {
+    font-size: 2rem;
+  }
+  
+  .time-display {
+    font-size: 3rem;
+  }
+}
