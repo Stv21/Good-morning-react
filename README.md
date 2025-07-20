@@ -85,4 +85,4 @@ To run this project locally:
 This project was created as part of the React JS assignment. I focused on creating a clean, functional, and visually appealing dashboard.
 
 Thanks,
-[Your Name]
+Steven
